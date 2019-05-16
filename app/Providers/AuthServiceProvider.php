@@ -34,5 +34,10 @@ class AuthServiceProvider extends ServiceProvider
         Passport::refreshTokensExpireIn(now()->addMinutes(5));
 
         Passport::personalAccessTokensExpireIn(now()->addMinutes(5));
+
+        Passport::tokensCan([
+            'admin' => 'Admin',
+            'koki'  => 'Koki',
+        ]);
     }
 }
